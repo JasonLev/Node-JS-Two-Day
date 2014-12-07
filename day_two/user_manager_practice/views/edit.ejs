@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Edit Manager</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+  <style>
+    .bold {
+      font-weight:bold;
+    }
+
+    .margin-top-20 {
+      margin-top:20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="jumbotron">
+    <form method="post" action="/users/<%= userInfo.id %>?_method=put">
+      <p>
+        <input type="text" name="firstname" value="<%= userInfo.firstname %>" />
+      </p>
+      <p>
+        <input type="text" name="lastname" value="<%= userInfo.lastname %>" />
+      </p>
+      <p>
+        <input type="text" name="username" value="<%= userInfo.username %>" />
+      </p>
+      <p>
+        <input type="text" name="age" value="<%= userInfo.age %>" />
+      </p>
+        <p>
+        <button type="submit">Edit</button>
+      </p>
+    </form>
+
+    <form method="post" action="/users/<%= userInfo.id %>?_method=delete">
+      <button type="submit">Delete User</button>
+    </form>
+  </div>
+
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

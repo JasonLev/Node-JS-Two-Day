@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>User Manager</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+  <style>
+    .bold {
+      font-weight:bold;
+    }
+
+    .margin-top-20 {
+      margin-top:20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="alldata" class="jumbotron">
+    <h1>The Users' data: </h1>
+    <table class="table">
+      <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Username</th>
+        <th>Edit</th>
+      </thead>
+      <tbody>
+        <% for (var i=0; i < allUsers.length; i++ ) {%>
+        <tr>
+          <td><%= allUsers[i].firstname %></td>
+          <td><%= allUsers[i].lastname %></td>
+          <td><%= allUsers[i].age %></td>
+          <td><%= allUsers[i].username %></td>
+          <td>
+            <a href="/users/edit/<%= allUsers[i].id %>" class="btn btn-primary">Edit</a>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+
+
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
