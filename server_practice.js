@@ -65,11 +65,26 @@ app.get("/getgoogle", function(req, res) {
   });
 });
 
+
+
+// fb exercise
 app.get("/getfb", function(req, res) {
   request("http://www.facebook.com", function(error, response, body) {
     if (!error && response.statusCode == 200) {
         res.render("fb.ejs", {
           fb: body
+        });
+    }
+  });
+});
+
+app.get("/userdata", function(req, res) {
+  request('http://daretodiscover.net/user', function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+        var data = JSON.parse(body);
+
+        res.render("user.ejs", {
+          userData: data
         });
     }
   });

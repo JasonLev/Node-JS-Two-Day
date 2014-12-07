@@ -1,0 +1,13 @@
+<div id="alldata">
+  <h1>The Users' data: </h1>
+
+  <% for (var i=0; i <userData.length; i++ ) {%>
+    <h2><%= userData[i].firstname %>:</h2>
+    <table>
+      <td><%= userData[i].firstname %></td>
+      <td><%= userData[i].lastname %></td>
+      <td><%= userData[i].age %></td>
+      <td><%= userData[i].username %></td>
+    </table>
+  <% } %>
+</div>

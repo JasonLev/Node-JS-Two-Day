@@ -1,0 +1,21 @@
+<form method="post" action="/users/<%= userInfo.id %>?_method=put">
+  <p>
+    <input type="text" name="firstname" value="<%= userInfo.firstname %>" />
+  </p>
+  <p>
+    <input type="text" name="lastname" value="<%= userInfo.lastname %>" />
+  </p>
+  <p>
+    <input type="text" name="username" value="<%= userInfo.username %>" />
+  </p>
+  <p>
+    <input type="text" name="age" value="<%= userInfo.age %>" />
+  </p>
+    <p>
+    <button type="submit">Edit</button>
+  </p>
+</form>
+
+<form method="post" action="/users/<%= userInfo.id %>?_method=delete">
+  <button type="submit">Delete</button>
+</form>
